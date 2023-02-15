@@ -11,7 +11,6 @@
     :sider-collapsed-width="siderCollapsedWidth"
     :sider-collapse="app.siderCollapse"
     :fixed-footer="theme.footer.fixed"
-    :footer-visible="theme.footer.visible"
     @update:sider-collapse="app.setSiderCollapse"
   >
     <template #header>

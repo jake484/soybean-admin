@@ -6,12 +6,12 @@
       :key="item.fullPath"
       :is-active="tab.activeTab === item.fullPath"
       :primary-color="theme.themeColor"
-      :closable="!(item.name === tab.homeTab.name || item.meta.affix)"
+      :closable="item.name !== tab.homeTab.name"
       :dark-mode="theme.darkMode"
       :class="{ '!mr-0': isChromeMode && index === tab.tabs.length - 1, 'mr-10px': !isChromeMode }"
       @click="tab.handleClickTab(item.fullPath)"
       @close="tab.removeTab(item.fullPath)"
-      @contextmenu="handleContextMenu($event, item.fullPath, item.meta.affix)"
+      @contextmenu="handleContextMenu($event, item.fullPath)"
     >
       <svg-icon
         :icon="item.meta.icon"
@@ -24,7 +24,6 @@
   <context-menu
     :visible="dropdown.visible"
     :current-path="dropdown.currentPath"
-    :affix="dropdown.affix"
     :x="dropdown.x"
     :y="dropdown.y"
     @update:visible="handleDropdownVisible"
@@ -65,36 +64,32 @@ async function getActiveTabClientX() {
   }
 }
 
-interface DropdownConfig {
-  visible: boolean;
-  affix: boolean;
-  x: number;
-  y: number;
-  currentPath: string;
-}
-
-const dropdown: DropdownConfig = reactive({
+const dropdown = reactive({
   visible: false,
-  affix: false,
   x: 0,
   y: 0,
   currentPath: ''
 });
-
-function setDropdown(config: Partial<DropdownConfig>) {
-  Object.assign(dropdown, config);
+function showDropdown() {
+  dropdown.visible = true;
+}
+function hideDropdown() {
+  dropdown.visible = false;
+}
+function setDropdown(x: number, y: number, currentPath: string) {
+  Object.assign(dropdown, { x, y, currentPath });
 }
 
 let isClickContextMenu = false;
 
 function handleDropdownVisible(visible: boolean) {
   if (!isClickContextMenu) {
-    setDropdown({ visible });
+    dropdown.visible = visible;
   }
 }
 
 /** 点击右键菜单 */
-async function handleContextMenu(e: MouseEvent, currentPath: string, affix?: boolean) {
+async function handleContextMenu(e: MouseEvent, fullPath: string) {
   e.preventDefault();
 
   const { clientX, clientY } = e;
@@ -103,16 +98,11 @@ async function handleContextMenu(e: MouseEvent, currentPath: string, affix?: boo
 
   const DURATION = dropdown.visible ? 150 : 0;
 
-  setDropdown({ visible: false });
+  hideDropdown();
 
   setTimeout(() => {
-    setDropdown({
-      visible: true,
-      x: clientX,
-      y: clientY,
-      currentPath,
-      affix
-    });
+    setDropdown(clientX, clientY, fullPath);
+    showDropdown();
     isClickContextMenu = false;
   }, DURATION);
 }

@@ -9,6 +9,14 @@ export const userModel: UserModel[] = [
     token: '__TOKEN_SOYBEAN__',
     refreshToken: '__REFRESH_TOKEN_SOYBEAN__',
     userId: '0',
+    userName: 'Ai4EAdmin',
+    userRole: 'super',
+    password: 'ai4e123456'
+  },
+  {
+    token: '__TOKEN_SOYBEAN__',
+    refreshToken: '__REFRESH_TOKEN_SOYBEAN__',
+    userId: '0',
     userName: 'Soybean',
     userRole: 'super',
     password: 'soybean123'

@@ -1,9 +1,6 @@
 import type { RouteComponent } from 'vue-router';
 
-export const views: Record<
-  PageRoute.LastDegreeRouteKey,
-  RouteComponent | (() => Promise<{ default: RouteComponent }>)
-> = {
+export const views: Record<RouterPage.LastDegreeRouteKey, RouteComponent | (() => Promise<RouteComponent>)> = {
   403: () => import('./_builtin/403/index.vue'),
   404: () => import('./_builtin/404/index.vue'),
   500: () => import('./_builtin/500/index.vue'),
@@ -18,10 +15,13 @@ export const views: Record<
   component_table: () => import('./component/table/index.vue'),
   dashboard_analysis: () => import('./dashboard/analysis/index.vue'),
   dashboard_workbench: () => import('./dashboard/workbench/index.vue'),
+  document_ai4ecomponentlib: () => import('./document/ai4ecomponentlib/index.vue'),
+  document_ai4edocs: () => import('./document/ai4edocs/index.vue'),
+  document_ai4emetapse: () => import('./document/ai4emetapse/index.vue'),
+  document_ai4eserver: () => import('./document/ai4eserver/index.vue'),
   document_naive: () => import('./document/naive/index.vue'),
   'document_project-link': () => import('./document/project-link/index.vue'),
   document_project: () => import('./document/project/index.vue'),
-  document_vite: () => import('./document/vite/index.vue'),
   document_vue: () => import('./document/vue/index.vue'),
   exception_403: () => import('./exception/403/index.vue'),
   exception_404: () => import('./exception/404/index.vue'),

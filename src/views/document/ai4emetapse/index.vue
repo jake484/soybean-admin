@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const src = ref('https://ai4energy.github.io/Ai4ESimulator/dev/');
+const src = ref('https://ai4energy.github.io/Ai4EMetaPSE.jl/dev/');
 </script>
 
 <style scoped></style>

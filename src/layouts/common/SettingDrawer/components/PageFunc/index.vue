@@ -61,9 +61,6 @@
     <setting-menu label="固定底部">
       <n-switch :value="theme.footer.fixed" @update:value="theme.setFooterIsFixed" />
     </setting-menu>
-    <setting-menu label="显示底部">
-      <n-switch :value="theme.footer.visible" @update:value="theme.setFooterVisible" />
-    </setting-menu>
   </n-space>
 </template>
 
