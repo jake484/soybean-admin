@@ -5374,7 +5374,7 @@
             "disabled": false,
             "holder": "给出一种已知状态",
             "unit": "",
-            "value": "'P'",
+            "value": "P",
             "require": true,
             "type": "string"
           },
@@ -5383,7 +5383,7 @@
             "disabled": false,
             "holder": "给出另一种状态",
             "unit": "",
-            "value": "'T'",
+            "value": "T",
             "require": true,
             "type": "string"
           },
@@ -5392,7 +5392,7 @@
             "disabled": false,
             "holder": "请输入流体种类",
             "unit": "",
-            "value": "'Water'",
+            "value": "Water",
             "require": true,
             "type": "string"
           }
@@ -5523,7 +5523,7 @@
             "disabled": false,
             "holder": "给出除焓以外另一种已知状态",
             "unit": "",
-            "value": "'P'",
+            "value": "P",
             "require": true,
             "type": "string"
           },
@@ -5532,7 +5532,7 @@
             "disabled": false,
             "holder": "请输入流体种类",
             "unit": "",
-            "value": "'Water'",
+            "value": "Water",
             "require": true,
             "type": "string"
           }
@@ -5663,7 +5663,7 @@
             "disabled": false,
             "holder": "给出除熵以外另一种已知状态",
             "unit": "",
-            "value": "'P'",
+            "value": "P",
             "require": true,
             "type": "string"
           },
@@ -5672,7 +5672,7 @@
             "disabled": false,
             "holder": "请输入流体种类",
             "unit": "",
-            "value": "'Water'",
+            "value": "Water",
             "require": true,
             "type": "string"
           }
@@ -5803,7 +5803,7 @@
             "disabled": false,
             "holder": "给出除温度以外另一种已知状态",
             "unit": "",
-            "value": "'Q_0'",
+            "value": "Q_0",
             "require": true,
             "type": "string"
           },
@@ -5812,7 +5812,7 @@
             "disabled": false,
             "holder": "请输入流体种类",
             "unit": "",
-            "value": "'Water'",
+            "value": "Water",
             "require": true,
             "type": "string"
           }
@@ -5943,7 +5943,7 @@
             "disabled": false,
             "holder": "给出除压力以外另一种已知状态",
             "unit": "",
-            "value": "'T'",
+            "value": "T",
             "require": true,
             "type": "string"
           },
@@ -5952,7 +5952,7 @@
             "disabled": false,
             "holder": "请输入流体种类",
             "unit": "",
-            "value": "'Water'",
+            "value": "Water",
             "require": true,
             "type": "string"
           }
@@ -6083,7 +6083,7 @@
             "disabled": false,
             "holder": "给出除体积以外另一种已知状态",
             "unit": "",
-            "value": "'T'",
+            "value": "T",
             "require": true,
             "type": "string"
           },
@@ -6092,7 +6092,7 @@
             "disabled": false,
             "holder": "请输入流体种类",
             "unit": "",
-            "value": "'Water'",
+            "value": "Water",
             "require": true,
             "type": "string"
           }
@@ -6201,7 +6201,7 @@
             "disabled": false,
             "holder": "给出一种已知状态",
             "unit": "",
-            "value": "'P'",
+            "value": "P",
             "require": true,
             "type": "string"
           },

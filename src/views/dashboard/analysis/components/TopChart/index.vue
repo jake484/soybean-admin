@@ -1,6 +1,11 @@
 <template>
   <n-layout has-sider>
-    <n-layout-sider bordered width="20rem" :native-scrollbar="false">
+    <n-layout-sider bordered width="20rem" :native-scrollbar="true">
+      <n-space align="center" justify="start" class="button-group" >
+        <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button>
+        <n-button type="success"  v-on:click="simulate">仿真计算</n-button>
+        <n-button type="primary"  v-on:click="simPropPop">仿真选项设置</n-button>
+      </n-space>
       <n-collapse :accordion="true">
         <n-collapse-item
           v-for="(item, index) in iconCategory"
@@ -16,23 +21,19 @@
             :key="index"
             :icon-id="icon.properties.name"
             :icon="[icon.icon]"
-            :icon-size="6"
+            :icon-size="6.8"
             :callback="startDrag"
           />
         </div>
         </n-collapse-item>
       </n-collapse>
+
     </n-layout-sider>
     <n-layout-content :native-scrollbar="false">
       <n-card title="模型区">
         <div id="container" ref="container" class="sim-container"></div>
         <TeleportContainer />
       </n-card>
-      <n-button-group>
-        <n-button v-on:click="testApi.healthTest()">测试</n-button>
-        <n-button v-on:click="simulate">仿真</n-button>
-        <n-button v-on:click="simPropPop">仿真设置</n-button>
-      </n-button-group>
     </n-layout-content>
     <asm-prop-editor
       :open="propEditor"
@@ -50,7 +51,6 @@ import AsmPropEditor from "@/components/AsmPropEditor.vue";
 import {
   NCard,
   NButton,
-  NButtonGroup,
   NLayout,
   NLayoutSider,
   NCollapse,
@@ -69,7 +69,7 @@ import { History } from "@antv/x6-plugin-history";
 import { Dnd } from "@antv/x6-plugin-dnd";
 // import { Transform } from "@antv/x6-plugin-transform";
 import { register, getTeleport } from "@antv/x6-vue-shape";
-import IconWraper from "@/components/IconWraper.vue";
+// import IconWraper from "@/components/IconWraper.vue";
 import IconProvider from "@/components/IconProvider.vue";
 import { iconList } from "@/assets/assembly.json";
 interface IAttr {
@@ -97,13 +97,13 @@ let graph: Graph | null = null;
 let dnd: Dnd | null = null;
 const selectedNodeAttrs: Ref<Array<IAttr>> = ref([]);
 let postResult: Ref<object> = ref({});
-const portattr = {
-  circle: {
-    magnet: true,
-    stroke: "#545454a6",
-    r: 5,
-  },
-};
+// const portattr = {
+//   circle: {
+//     magnet: true,
+//     stroke: "#545454a6",
+//     r: 5,
+//   },
+// };
 const comps = ref(true);
 const simProp = [
   {
@@ -488,4 +488,13 @@ visualViewport?.addEventListener("resize", () => {
 .n-layout-content {
   height: 100%;
 }
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0.5em 1.5em 0.5em;
+}
+
 </style>
