@@ -2,8 +2,8 @@
   <n-layout has-sider>
     <n-layout-sider bordered width="20rem" :native-scrollbar="true">
       <n-space align="center" justify="start" class="button-group" >
-        <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button>
-        <n-button type="success"  v-on:click="simulate">仿真计算</n-button>
+        <!-- <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button> -->
+        <n-button type="primary"  v-on:click="simulate">点击进行计算</n-button>
         <n-button type="primary"  v-on:click="simPropPop">仿真选项设置</n-button>
       </n-space>
       <n-collapse :accordion="true">
@@ -125,14 +125,14 @@ const simProp = [
   {
     name: "timespan",
     type: "multinum",
-    value: [0, 10, 1],
+    value: [0, 10, null],
     unit: "s",
     require: true,
     holder: ["起始", "终止", "步长"],
   },
   {
     name: "solver",
-    type: "multiselection",
+    type: "selection",
     value: [],
     unit: "",
     require: true,
