@@ -2,9 +2,9 @@ import axios, { type AxiosInstance } from "axios";
 
 // 创建axios实例
 const service: AxiosInstance = axios.create({
-  // baseURL: import.meta.env.VITE_DEV_API_URL,
-  baseURL: "http://127.0.0.1:8081/",
-  timeout: 5000,
+  baseURL: import.meta.env.VITE_DEV_API_URL,
+  // baseURL: "/api",
+  timeout: 500000,
 });
 
 service.interceptors.request.use(
@@ -12,6 +12,7 @@ service.interceptors.request.use(
     /* if (store.getters.token) {
       config.headers["Authorization"] = "Bearer " + getToken();
     } */
+    config.headers['Content-Type'] = "application/json";
     return config;
   },
   (error) => {
@@ -27,7 +28,8 @@ service.interceptors.response.use(
       window.$message.error("Request failed with " + response.status);
       return Promise.reject("Error with code: " + response.status);
     } else {
-      window.$message.success("Request success with " + response.statusText);
+      // window.$message.success("请转到绘图页查看结果" + response.statusText);
+      window.$message.success("请转到绘图页查看结果！");
       return response.data;
     }
   },

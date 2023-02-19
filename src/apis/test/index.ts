@@ -3,7 +3,7 @@ import { service } from "../apiConfig";
 export default {
   jobTest(data: any) {
     return service({
-      url: "/job",
+      url: "/api/modeljson",
       method: "post",
       data: data,
     });
@@ -11,6 +11,12 @@ export default {
   healthTest() {
     return service({
       url: "/health",
+      method: "get",
+    });
+  },
+  WebSocketsTest2() {
+    return service({
+      url: "/foo/car",
       method: "get",
     });
   },

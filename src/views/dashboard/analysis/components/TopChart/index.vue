@@ -2,7 +2,9 @@
   <n-layout has-sider>
     <n-layout-sider bordered width="20rem" :native-scrollbar="true">
       <n-space align="center" justify="start" class="button-group" >
-        <!-- <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button> -->
+        <websock />
+        <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button>
+        <n-button type="success"  v-on:click="testApi.WebSocketsTest2()">WebSockets+logger测试</n-button>
         <n-button type="primary"  v-on:click="simulate">点击进行计算</n-button>
         <n-button type="primary"  v-on:click="simPropPop">仿真选项设置</n-button>
       </n-space>
@@ -46,6 +48,7 @@
 </template>
 
 <script setup lang="ts">
+import websock from "@/components/websock.vue";
 import testApi from "@/apis/test";
 import AsmPropEditor from "@/components/AsmPropEditor.vue";
 import {
@@ -72,6 +75,7 @@ import { register, getTeleport } from "@antv/x6-vue-shape";
 // import IconWraper from "@/components/IconWraper.vue";
 import IconProvider from "@/components/IconProvider.vue";
 import { iconList } from "@/assets/assembly.json";
+import axios from "axios";
 interface IAttr {
   name: string;
   type: string;
@@ -189,7 +193,22 @@ const simulate = () => {
   });
   simProp.forEach((ele: object) => (simProps[ele.name] = ele.value));
   postResult.value = { ...compAndCon, ...simProps };
-  testApi.jobTest(JSON.stringify(postResult.value));
+  // testApi.jobTest(JSON.stringify(postResult.value));
+  axios.post(import.meta.env.VITE_DEV_POST_API_URL + "api/modeljson", JSON.stringify(postResult.value),{
+    transformRequest: [
+      function(data) {
+        return data
+      }
+    ],
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then((res) => {
+    window.$message.success("请转到绘图页查看结果！");
+    console.log(res);
+  }).catch((err) => {
+    window.$message.success("请转到绘图页查看结果！");
+  })
   console.log(JSON.stringify(postResult.value))
 };
 const simPropPop = () => {

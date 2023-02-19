@@ -346,8 +346,8 @@ const rFigValueY = ref(null);
 
 const solInfo = reactive(new SolutionInfo());
 const getSolutionInfo = () => {
-  // axios.get('http://127.0.0.1:8081/api/getResult').then(
-  axios.get('https://www.fastmock.site/mock/c1520107474435ccf66bdaa7781568a8/api/getResult').then(
+  axios.get('http://127.0.0.1:8081/api/getResult').then(
+  // axios.get('https://www.fastmock.site/mock/c1520107474435ccf66bdaa7781568a8/api/getResult').then(
     res => {
       solInfo.options = getOptionsFromJson(res.data.data.varinfo);
       solInfo.sol = res.data.data.sol;
