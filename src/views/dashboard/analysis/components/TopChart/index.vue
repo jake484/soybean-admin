@@ -3,8 +3,8 @@
     <n-layout-sider bordered width="20rem" :native-scrollbar="true">
       <n-space align="center" justify="start" class="button-group" >
         <websock />
-        <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button>
-        <n-button type="success"  v-on:click="testApi.WebSocketsTest2()">WebSockets+logger测试</n-button>
+        <!-- <n-button type="success"  v-on:click="testApi.healthTest()">测试</n-button>
+        <n-button type="success"  v-on:click="testApi.WebSocketsTest2()">WebSockets+logger测试</n-button> -->
         <n-button type="primary"  v-on:click="simulate">点击进行计算</n-button>
         <n-button type="primary"  v-on:click="simPropPop">仿真选项设置</n-button>
       </n-space>

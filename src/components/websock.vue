@@ -65,6 +65,12 @@ const websocketonopen = (res: any) => {
         msgReactive = window.$message.loading(res.status, {
             duration: 0
           })  
+      } else if (res.status == "准备计算！") {
+        if (msgReactive) {
+          msgReactive = window.$message.loading(res.status, {
+            duration: 0
+          })  
+        }
       } else if (res.status == "正在计算!") {
         if (msgReactive) {
           //将小数点后面的数字转换为百分数，并保留两位小数
@@ -85,6 +91,10 @@ const websocketonopen = (res: any) => {
       } else {
         if (msgReactive) {
           msgReactive.content = res.status
+          setTimeout(() => {
+            msgReactive?.destroy();
+            msgReactive = null;
+          }, 3000);
         }
       }
     };

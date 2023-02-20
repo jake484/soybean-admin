@@ -1450,6 +1450,191 @@
               "stroke": "currentColor",
               "text-anchor": "middle",
               "font-size": 20,
+              "innerHTML": "锂电池"
+            },
+            "children": null
+          },
+          {
+            "name": "polyline",
+            "attrs": {
+              "points": "0 85.0 15.0 100.0 0 115.0",
+              "stroke": "currentColor",
+              "stroke-width": "3.0",
+              "fill-opacity": "0"
+            },
+            "children": null
+          },
+          {
+            "name": "text",
+            "attrs": {
+              "x": "25.0",
+              "y": "105.0",
+              "stroke": "currentColor",
+              "text-anchor": "start",
+              "font-size": 20,
+              "innerHTML": "p"
+            },
+            "children": null
+          },
+          {
+            "name": "polyline",
+            "attrs": {
+              "points": "185.0 85.0 200.0 100.0 185.0 115.0",
+              "stroke": "currentColor",
+              "stroke-width": "3.0",
+              "fill-opacity": "0"
+            },
+            "children": null
+          },
+          {
+            "name": "text",
+            "attrs": {
+              "x": "175.0",
+              "y": "105.0",
+              "stroke": "currentColor",
+              "text-anchor": "end",
+              "font-size": 20,
+              "innerHTML": "n"
+            },
+            "children": null
+          }
+        ]
+      },
+      "properties": {
+        "label": "logo",
+        "name": "ea401710-91aa-11ed-10eb-bdfa60a47b23",
+        "height": 100,
+        "attrs": [
+          {
+            "name": "name",
+            "disabled": false,
+            "holder": "请输入组件名称",
+            "unit": "",
+            "value": "Lithium_ion_batteries",
+            "require": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "disabled": true,
+            "holder": "请输入组件名称",
+            "unit": "",
+            "value": "Lithium_ion_batteries",
+            "require": true,
+            "type": "string"
+          },
+          {
+            "name": "R_0",
+            "disabled": false,
+            "holder": "请输入Series resistor",
+            "unit": "Ω",
+            "value": 0.01,
+            "require": true,
+            "type": "number"
+          },
+          {
+            "name": "R_s",
+            "disabled": false,
+            "holder": "请输入Short transient resistor",
+            "unit": "Ω",
+            "value": 0.01,
+            "require": true,
+            "type": "number"
+          },
+          {
+            "name": "R_f",
+            "disabled": false,
+            "holder": "请输入Long transient resistor",
+            "unit": "Ω",
+            "value": 0.008,
+            "require": true,
+            "type": "number"
+          },
+          {
+            "name": "R_sd",
+            "disabled": false,
+            "holder": "请输入Self-discharge resistor",
+            "unit": "Ω",
+            "value": 0.5,
+            "require": true,
+            "type": "number"
+          },
+          {
+            "name": "C_s",
+            "disabled": false,
+            "holder": "请输入Short transient capacity",
+            "unit": "Ω",
+            "value": 2.5e4,
+            "require": true,
+            "type": "number"
+          },
+          {
+            "name": "C_f",
+            "disabled": false,
+            "holder": "请输入Long transient capacity",
+            "unit": "Ω",
+            "value": 8.0e3,
+            "require": true,
+            "type": "number"
+          },
+          {
+            "name": "C_b",
+            "disabled": false,
+            "holder": "请输入Usable capacity",
+            "unit": "Ω",
+            "value": 108000,
+            "require": true,
+            "type": "number"
+          }
+        ],
+        "ports": [
+          {
+            "gp": "sleft",
+            "lb": "p",
+            "clr": "#919191"
+          },
+          {
+            "gp": "sright",
+            "lb": "n",
+            "clr": "#919191"
+          }
+        ],
+        "width": 100,
+        "category": "ea3ede90-91aa-11ed-1d4c-d76f719a1e6f"
+      }
+    },
+    {
+      "icon": {
+        "name": "svg",
+        "attrs": {
+          "version": "1.1",
+          "viewBox": "0 0 200.0 200.0",
+          "xmlns": "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "width": "200.0",
+          "height": "200.0"
+        },
+        "children": [
+          {
+            "name": "rect",
+            "attrs": {
+              "width": "200.0",
+              "height": "200.0",
+              "stroke": "currentColor",
+              "stroke-width": "5.0",
+              "fill": "white",
+              "fill-opacity": "0"
+            },
+            "children": null
+          },
+          {
+            "name": "text",
+            "attrs": {
+              "x": "100.0",
+              "y": "105.0",
+              "stroke": "currentColor",
+              "text-anchor": "middle",
+              "font-size": 20,
               "innerHTML": "电阻"
             },
             "children": null
